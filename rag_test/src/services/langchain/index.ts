@@ -50,8 +50,10 @@ const sent3 = "the weather is ugly outside";
 const addDocumentsToStore = async () => {
   try {
     const docs = await loadPdf.load();
-    const splited = await recursive_spliter.splitDocuments(docs);
-    await vectorStore.addDocuments(splited);
+    console.log(docs);
+    
+    // const splited = await recursive_spliter.splitDocuments(docs);
+    // await vectorStore.addDocuments(splited);
   } catch (error: any) {
     console.log("error-server: ", error);
   }

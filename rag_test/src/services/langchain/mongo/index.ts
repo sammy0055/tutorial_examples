@@ -25,7 +25,7 @@ const recursive_spliter = new RecursiveCharacterTextSplitter({
   chunkOverlap,
 });
 
-const loadPdf = new PDFLoader("src/docs/amzon_s3.pdf");
+const loadPdf = new PDFLoader("src/docs/amzon_s3.pdf", {splitPages:false});
 const client = new MongoClient(process.env.MONGODB_ATLAS_URI || "");
 const namespace = "vectorDB.test";
 const [dbName, collectionName] = namespace.split(".");
@@ -58,8 +58,8 @@ export const addDocumentsToStore = async () => {
   try {
     const docs = await loadPdf.load();
     const splited = await recursive_spliter.splitDocuments(docs);
-    const ids = await vectorStore.addDocuments(splited);
-    console.log("docs", ids);
+    // const ids = await vectorStore.addDocuments(splited);
+    console.log("docs", docs, splited);
     await client.close();
   } catch (error: any) {
     console.log("error-server: ", error);
@@ -147,7 +147,7 @@ export const chatWithDocumentsMapReduceMethod = async () => {
         searchKwargs: {
           fetchK: 3,
           lambda: 0,
-        },
+        }
       }),
       returnSourceDocuments: true,
     });

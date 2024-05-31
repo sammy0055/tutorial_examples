@@ -7,13 +7,15 @@ import {
   compresedDocumentTest,
   semanticSearch,
 } from "./services/langchain/mongo";
+import { testBedrock } from "./services/langchain/aws-bedrock";
 console.log("welcome");
 // loaderFn()
 // pdfLoader()
 
 // mongo vector operations
-// addDocumentsToStore()
+addDocumentsToStore()
 // semanticSearch()
 // compresedDocumentTest()
 // chatWithDocuments()
-chatWithDocumentsMapReduceMethod();
+// chatWithDocumentsMapReduceMethod();
+// testBedrock()

@@ -1,64 +1,67 @@
-# Step-by-Step Guide: How to setup Meta WhatSapp API to manage WhatSapp Business Accounts (WABA) mostly for automation
+# Step-by-Step Guide: How to Set Up Meta WhatsApp API to Manage WhatsApp Business Accounts (WABA) - Part One
 
-## welcome to a short tutorial where i will walk you through how to set up meta buinsess login to onboard users of meta social media users specifically WhatSapp for long lived access to manage thier account their account re-authentication. i will also setup whatsapp web-hooks to recieve events, and expose you to other whatsapp endpoints for your various needs and use cases
+## Welcome to a short tutorial where I will walk you through how to set up Meta Business Login to onboard WhatsApp Business Accounts. I will also set up WhatsApp webhooks to receive events and expose you to other WhatsApp endpoints for various needs and use cases.
 
-### periquisite
- - code edidtor: vscode integrated termial (preferred)
- - typescript/nodejs: basic to intermidiate knowledge
- - react/nextjs: basic knowledge, will only be use to onboard Meta users (whatsapp).
-### agenda
- - create Meta developer account: this is your normal facebook account
- - create Meta business portfolio: Meta business business for managing your business on Meta, integrated with all of meta's products like whatsapp, facebook-page, instagram etc.
- - create a business app: we will create an app in your developer portal.
- - setup Facebook Business Login for WhatSapp <br>
- <i> don't be confused with the name Facebook Business Login as this Meta product on the developer portal can be used to onboard users from Meta placeforms e.g whatsapp, instagram etc</i>.</br>
-  - setup whatsapp webhook: to receive messages and notifications in real time.
- - test whatsapp coud api endpoints: test the Meta managed cloud api endpoints for whatsapp.
+### Prerequisites
+- **Code Editor**: VS Code integrated terminal (preferred)
+- **TypeScript/Node.js**: Basic to intermediate knowledge
+- **React/Next.js**: Basic knowledge, will only be used to onboard Meta users (WhatsApp)
 
- ## Create a Meta Business Portfolio
-1. register/login to to your normal facebook account.
-2. open a new tap on your browser and enter https://business.facebook.com/
-3. you should now be on the business manager home page, create a new business portfolio.
- - if you have at least one business portfolio already click the dropdown icon on the business name at the sidebar, then click on create a business business portfolio to create a new businsess portfolio.
- - if your account is fresh you will have the button in front of you to create a business portfolio.<br>
- regardless of where the button is, find it and create a new business portfolio.
- 
+### Agenda
+- **Create Meta Developer Account**: This is your normal Facebook account
+- **Create Meta Business Portfolio**: Meta business account for managing your business on Meta, integrated with all of Meta's products like WhatsApp, Facebook Pages, Instagram, etc.
+- **Create a Business App**: We will create an app in your developer portal.
+- **Set Up Facebook Business Login for WhatsApp**<br>
+  *Note: Don't be confused by the name Facebook Business Login, as this Meta product on the developer portal can be used to onboard users from Meta platforms such as WhatsApp, Instagram, etc.*
 
- ## Create a Meta Developer Account
- ensure you are logged in to your normal facebook account and navigate to https://developers.facebook.com/ to create a meta developer account. your normal facebook account will be automatically used as your meta developer account.
+## Create a Meta Business Portfolio
+1. Register or log in to your normal Facebook account.
+2. Open a new tab on your browser and go to [Meta Business Manager](https://business.facebook.com/).
+3. You should now be on the Business Manager home page. Create a new business portfolio.
+   - If you have at least one business portfolio already, click the dropdown icon on the business name in the sidebar, then click on "Create a Business Portfolio" to create a new business portfolio.
+   - If your account is new, you will see a button to create a business portfolio. Find it and create a new business portfolio.
 
- ## Create a business App on the developer portal
- 1. navigate to the Meta developer portal: https://developers.facebook.com/
- 2. click on my Apps 
- 3. click on create app to create a new business app
- 4. on the page(What do you want your app to do?) choose `Others` and click next.
- 5. on the page(Select an app type) choose `Business` and click next 
- 6. enter the name of the app (any name of your choosing) and contact email.
- optionally you can choose the business portfolio you create earlier and click save. your screen should look like the one below, if its not click on the app you just created.<br>
+## Create a Meta Developer Account
+Ensure you are logged in to your normal Facebook account and navigate to [Meta for Developers](https://developers.facebook.com/) to create a Meta developer account. Your normal Facebook account will be automatically used as your Meta developer account.
 
- <img src="./assests/meta-developer-portal-screen.png" />
+## Create a Business App on the Developer Portal
+1. Navigate to the [Meta Developer Portal](https://developers.facebook.com/).
+2. Click on "My Apps".
+3. Click on "Create App" to create a new business app.
+4. On the "What do you want your app to do?" page, choose "Others" and click "Next".
+5. On the "Select an app type" page, choose "Business" and click "Next".
+6. Enter the name of the app (any name of your choosing) and contact email. Optionally, you can choose the business portfolio you created earlier and click "Save". Your screen should look like the one below; if not, click on the app you just created.
 
- 7. click on app settings/basic
- 8. copy app ID and app Secret to your `.env`. on the appDomain use localhost because the app in in development mode.
- 9. scroll down to verify business, choose you business portfolio(if not already choosen) click on start verification.
-<img src="./assests/keys.png" />
+![Meta Developer Portal Screen](./assets/meta-developer-portal-screen.png)
 
-## setup Whatsapp product on the developer portal
-1. on the sidebar click add product, scroll down and locate whatsapp and click setup
-2. complete the Become a Tech Provider onboarding process(get it to integration at most)
- <img src="./assests/whatsapp-product.png" />
+7. Click on "App Settings/Basic".
+8. Copy the app ID and app Secret to your `.env`. For the app domain, use localhost because the app is in development mode.
+9. Scroll down to verify the business, choose your business portfolio (if not already chosen), and click "Start Verification".
 
- ## Setup Facebook Business Login for WhatSapp.
- 1. on the sidebar click add product, scroll down and locate Facebook Login For Business and click setup
- <img src="./assests/login-product.png" />
- 
- 2. on the sidebar under facebook login for business click configurations.
- 3. click on create configuration.
- 4. give the config a name
- 5. choose whatsapp embedded signup
- 6. choose access token: System-user access token 
- 7. Choose permissions: whatsapp_business_management and whatsapp_business_messaging.
- 8. click save and copy the configuration code.
+![Keys](./assets/keys.png)
 
+## Set Up WhatsApp Product on the Developer Portal
+1. On the sidebar, click "Add Product", scroll down and locate WhatsApp, then click "Set Up".
+2. Complete the "Become a Tech Provider" onboarding process (get it to integration at most).
 
+![WhatsApp Product](./assets/whatsapp-product.png)
 
+## Set Up Facebook Business Login for WhatsApp
+1. On the sidebar, click "Add Product", scroll down and locate Facebook Login for Business, then click "Set Up".
+
+![Login Product](./assets/login-product.png)
+
+2. On the sidebar under Facebook Login for Business, click "Configurations".
+3. Click on "Create Configuration".
+4. Give the configuration a name.
+5. Choose "WhatsApp Embedded Signup".
+6. Choose access token: System-user access token.
+7. Choose permissions: `whatsapp_business_management` and `whatsapp_business_messaging`.
+8. Click "Save" and copy the configuration code.
+
+# In the Next Article
+- We will onboard WhatsApp Business Accounts with Next.js.
+- We will set up webhooks to receive WhatsApp events.
+- We will explore other WhatsApp Cloud API endpoints.
+
+Stay tuned for the next article! For questions, you can direct them to this [GitHub repo](https://github.com/sammy0055/tutorial_examples/tree/main/meta_whatsapp_api_for_business): Step-by-Step Guide: How to Set Up Meta WhatsApp API to Manage WhatsApp Business Accounts (WABA) mostly for automation.

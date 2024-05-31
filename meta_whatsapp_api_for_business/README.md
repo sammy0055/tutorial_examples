@@ -32,24 +32,24 @@ Ensure you are logged in to your normal Facebook account and navigate to [Meta f
 5. On the "Select an app type" page, choose "Business" and click "Next".
 6. Enter the name of the app (any name of your choosing) and contact email. Optionally, you can choose the business portfolio you created earlier and click "Save". Your screen should look like the one below; if not, click on the app you just created.
 
-![Meta Developer Portal Screen](./assets/meta-developer-portal-screen.png)
+![Meta Developer Portal Screen](./assests/meta-developer-portal-screen.png)
 
 7. Click on "App Settings/Basic".
 8. Copy the app ID and app Secret to your `.env`. For the app domain, use localhost because the app is in development mode.
 9. Scroll down to verify the business, choose your business portfolio (if not already chosen), and click "Start Verification".
 
-![Keys](./assets/keys.png)
+![Keys](./assests/keys.png)
 
 ## Set Up WhatsApp Product on the Developer Portal
 1. On the sidebar, click "Add Product", scroll down and locate WhatsApp, then click "Set Up".
 2. Complete the "Become a Tech Provider" onboarding process (get it to integration at most).
 
-![WhatsApp Product](./assets/whatsapp-product.png)
+![WhatsApp Product](./assests/whatsapp-product.png)
 
 ## Set Up Facebook Business Login for WhatsApp
 1. On the sidebar, click "Add Product", scroll down and locate Facebook Login for Business, then click "Set Up".
 
-![Login Product](./assets/login-product.png)
+![Login Product](./assests/login-product.png)
 
 2. On the sidebar under Facebook Login for Business, click "Configurations".
 3. Click on "Create Configuration".

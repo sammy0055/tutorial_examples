@@ -47,10 +47,11 @@
 1. on the sidebar click add product, scroll down and locate whatsapp and click setup
 2. complete the Become a Tech Provider onboarding process(get it to integration at most)
  <img src="./assests/whatsapp-product.png" />
- 
+
  ## Setup Facebook Business Login for WhatSapp.
  1. on the sidebar click add product, scroll down and locate Facebook Login For Business and click setup
  <img src="./assests/login-product.png" />
+ 
  2. on the sidebar under facebook login for business click configurations.
  3. click on create configuration.
  4. give the config a name
